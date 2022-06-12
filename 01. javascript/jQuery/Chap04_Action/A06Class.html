@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>A06 Class</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<style>
+		div { margin:5px 5px 5px 5px; border:solid 1px gray; width:200px; text-align: center }
+		button.default { background-color: aqua; width:100px; border: solid 1px gray; text-align: center; margin: 2px 1px 2px 1px;	}
+		button.hover { background-color: purple; color:yellow; }
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			//radio button!!  클릭할때 
+			$('#a button').click(function(){
+				$(this).parent().find('button').removeClass('hover')
+				if(!$(this).addClass('hover')){
+					$(this).addClass('hover')
+				}
+			})
+
+			// 누르면 적용, 다시누르면 해제
+			$('#b button').click(function(){
+				if($(this).addClass('hover')){
+					$(this).removeClass('hover')
+				} else {
+					$(this).addClass('hover')
+				}
+			});
+
+			// 마찬가지로
+			$('#c button').click(function(){
+				$(this).toggleClass('hover')
+			});
+
+			
+			// 마우스 올릴때 이미지 변경
+			var obj = [
+				{img1: './images/capetown.jpg', img2: './images/machu.jpg'},
+				{img1: './images/capetown.jpg', img2: './images/machu.jpg'},
+			]
+			
+			$('#d img').mouseenter(function(){
+				$(this).attr('src', obj[0].img2)
+			}).mouseleave(function(){
+				$(this).attr('src', obj[0].img1)
+			})
+
+
+
+		});
+
+		
+	</script>
+</head>
+
+<body>
+	<div class="card-body" id="a">
+		<button name="btn" class="default">CEO</button>
+		<button name="btn" class="default">회사소개</button>
+		<button name="btn" class="default">사업영역</button>
+		<button name="btn" class="default">제품소개</button>
+	</div>
+
+	<div class="card-body" id="b">
+		<button name="btn" class="default">한식</button>
+		<button name="btn" class="default">분식</button>
+		<button name="btn" class="default">중식</button>
+		<button name="btn" class="default">양식</button>
+	</div>
+
+	<div class="card-body" id="c">
+		<button name="btn" class="default">한식</button>
+		<button name="btn" class="default">분식</button>
+		<button name="btn" class="default">중식</button>
+		<button name="btn" class="default">양식</button>
+	</div>
+	<br>
+
+	<div class="card-body" id="d">
+		<img src="./images/capetown.jpg" alt="capetown">
+	</div>
+
+	<div class="card-body" id="e">
+		<span>ABC</span>
+	</div>
+
+</body>
+
+</html>

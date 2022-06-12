@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .alert-box {
+            background: rgb(80, 80, 209);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+
+
+
+    </style>
+</head>
+
+
+<body>
+    <h2 id="hello">hello hello hello</h2>
+
+    <h2 id="ice-cream">올때 메로나</h2>
+
+    <h2 id="color">색상바꾸고싶다</h2>
+
+    <div class="alert-box" id="alert">
+        <p id="title">Alert 박스</p>
+    </div>
+    <div>
+        <button onclick="alertBtn('block')">열기 버튼</button>
+        <button onclick="alertBtn('none')">닫기 버튼</button>
+        <button onclick="openAlert(1)">첫번째 알림창</button>
+        <button onclick="openAlert(2)">두번째 알림창</button>
+    </div>
+    <div>------------------------------------------------------------------------</div>
+    <div>
+        <button id="close"> X </button>
+    </div>
+
+
+
+
+
+
+    <!-- ----------------------------sctipt---------------------------- -->
+    <script>
+
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none'
+        });
+
+
+        
+        document.getElementById('hello').innerHTML = '안녕 안녕 안녕';
+
+        document.getElementById('ice-cream').innerHTML = '올때 바밤바'
+
+        document.getElementById('color').style.color = 'red'
+
+        // Alert Button
+        function alertBtn(x){
+            document.getElementById('alert').style.display = x
+        }
+
+        function openAlert(x) {
+            document.getElementById('title').innerHTML = '알림창 '+x+'번 입니다.'
+            document.getElementById('alert').style.display = 'block'
+        }
+
+
+
+
+    </script>
+</body>
+</html>

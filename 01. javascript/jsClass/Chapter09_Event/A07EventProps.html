@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>A07 Event Properties / page 773</title>
+    <script type="text/javascript">
+        (function(){
+            let boxX, boxY;
+
+            function onLoadEvent() {
+                let box = document.createElement('div');
+                let boxText = document.createTextNode('JavaScript')
+
+                box.appendChild(boxText);
+
+                box.style.width = '100px';
+                box.style.height = '100px';
+                box.style.backgroundColor = 'gray';
+                box.style.position = 'absolute';
+                box.style.left = '50px';
+                box.style.cursor = 'pointer';
+                box.style.display = 'block';
+
+                function moveEvent(evt) {
+                    box.style.left = evt.pageX - boxX +'px';
+                    box.style.top = evt.pageY - boxY + 'px';
+                }
+
+                box.addEventListener('mousedown', function(evt) {
+                    boxX = evt.offsetX;
+                    boxY = evt.offsetY;
+
+                    document.addEventListener('mousemove', moveEvent);
+                });
+
+                box.addEventListener('mouseup', function(evt) {
+                    document.removeEventListener('mousemove', moveEvent)
+                });
+                
+                document.body.appendChild(box)
+            }
+            window.addEventListener('load', onLoadEvent);
+        })();
+    </script>
+</head>
+<body>
+    <div class="card-body">
+        <h2>7. Event Properties</h2>
+        
+    </div>
+</body>
+</html>

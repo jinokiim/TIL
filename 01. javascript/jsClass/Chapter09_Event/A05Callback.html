@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>A05 Callback / page 772</title>
+    <script type="text/javascript">
+        // 여기에 바로 적으면 아직 DOM을 읽기 전이라 HTML요소에 접근 안됨 -> error
+        // window.onload = function() {...}     -> 이제 안씀
+
+        function threeEvent(evt) {
+            alert(evt.target.innerText);
+        }
+        // window.addEventListener('load', function(evt) {
+        //     // 문서가 다 읽어지고 난 뒤. DOM이 생성되어 있음
+        //     let one = document.getElementById('btnOne');
+        //     one.addEventListener('click', function(evt) {
+        //         alert(evt.target.innerText);
+        //     });
+        //     let two = document.getElementById('btnTwo').addEventListener('click', function(evt) {
+        //         alert(evt.target.innerText);
+        //     });
+
+        //     // Event가 발생되면 실행할 명령의 함수를 이벤트 핸들러라고 한다.
+        //     // 이벤트 핸들러는 묵시적으로 함수로써 호출하면서 첫번째 매개변수에 event객체를 전달
+        //     document.getElementById('btnThree').addEventListener('click', threeEvent);
+            
+        // });
+
+        function loadEvent(evt) {
+            let one = document.getElementById('btnOne');
+            one.addEventListener('click', function(evt) {
+                alert(evt.target.innerText);
+            });
+            let two = document.getElementById('btnTwo').addEventListener('click', function(evt) {
+                alert(evt.target.innerText);
+            });
+
+            document.getElementById('btnThree').addEventListener('click', threeEvent);
+        }
+        window.addEventListener('load', loadEvent)
+
+
+    </script>
+</head>
+<body>
+    <div class="card-body">
+        <h2>5. Event Listener Callback</h2>
+
+        <button id="btnOne">ONE</button>
+        <button id="btnTwo">TWO</button>
+        <button id="btnThree">THREE</button>
+    </div>
+</body>
+</html>

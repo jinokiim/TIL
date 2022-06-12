@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>A03 Attribute</title>
+    <script type="text/javascript">
+        
+        window.addEventListener('load', function(){
+            // href*=  -> 구글이 포함되어있는지? (^: 시작이 / $: 마지막이)
+            let google = document.querySelector('a[href*="google"]')
+            console.log(google);
+
+            // 속성 추가
+            google.setAttribute('title', '구글로 이동합니다.');
+
+            //속성 참조
+            let title = google.getAttribute('title');
+            console.log(title);
+
+            // 속성 변경
+            google.setAttribute('title', '속성을 변경하였습니다.');
+
+            // 속성 제거
+            google.removeAttribute('title');
+            google.removeAttribute('href');  // 링크제거
+
+            // 속성이 있니 (! 없니)
+            if(!google.hasAttribute('href')) {
+                google.setAttribute('href', 'http://www.daum.net');
+            }
+
+            //전체 속성
+            let attrs = document.querySelector('input[name="name"]').attributes;
+            // console.log(attrs);
+            for(let i = 0; i < attrs.length; i++) {
+                console.log(attrs[i].name, attrs[i].value);
+            }
+
+            // submit 버튼 이벤트
+            document.querySelector('form button[type="submit"]').addEventListener('click', checkForm)
+
+        });
+
+        function checkForm(evt) {
+            console.log('click');
+            evt.preventDefault();
+
+            const sendData = {};
+            const form = document.querySelector('form');
+
+
+
+            for(let i = 0; i < form.children.length; i++) {
+                let elem = form.children[i];
+
+                // nodeName 검색할땐 항상 대문자
+                if(elem.nodeName === 'INPUT' && elem.type === 'text'){
+                    // {key: value, key: value}
+                    let name = elem.getAttribute('name');
+                    sendData[name] = elem.value;
+                }
+            }
+            console.log(sendData);    //JavaScript Data 형식
+
+            //JavaScript Data형식 -> Json Data(text) 형식으로 반환
+            let jsonData = JSON.stringify(sendData)
+            console.log(jsonData);
+
+            // 서버측에서 JSON 타입 형태로 데이터를 전달해줬다면
+            console.log(typeof(jsonData));
+
+            //Json Data(text) 형식 -> JavaScript Data형식(object)으로 반환
+            // GSON, Jackson
+            let jsData = JSON.parse(jsonData);
+            console.log(jsData);
+
+        }
+    </script>
+</head>
+<body>
+    <div class="card-body">
+        <h2>Element Attribute</h2>
+
+        <div>
+            <a href="http://www.google.com">GOOGLE</a>
+        </div>
+
+        <form method="GET" action="xxx.jsp">
+            Name: <input type="text" class="form-control" name="name" >
+            Age: <input type="text" class="form-control" name="age">
+            Password: <input type="password" class="form-control" name="pw">
+            <button type="submit">SEND</button>
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

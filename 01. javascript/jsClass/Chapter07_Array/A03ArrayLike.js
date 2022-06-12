@@ -1,0 +1,24 @@
+/*
+유사 배열(Array Like Object)
+    1. 0 이상의 정수 값으로 프로퍼티 이름을 갖는다.
+    2. length 프로퍼티가 있다.
+    3. 요소의 추가, 삭제에 따라 length의 값이 변경되어야 한다.
+
+    HTML DOM의 li 등이 Array Like Object이다.
+*/
+
+//함수 내부에서 매개변수를 관리하기 위해 만들어지는 유사 배열이다.
+
+let obj = {
+    0: 'NolBu',
+    1: 'HungBu',
+    length: 2,
+
+    push: function(value) {
+        this.length++;
+        this[this.length] = value;
+        return this.length;
+    }
+}
+
+obj[0]

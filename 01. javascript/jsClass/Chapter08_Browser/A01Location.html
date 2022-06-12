@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>A01 Location / History</title>
+</head>
+<body>
+    <div class="card-body">
+        <h1>Location</h1>
+
+        <div>
+            href: <span id="hash"></span><br>
+            host: <span id="host"></span><br>
+            hostname: <span id="hostname"></span><br>
+            href: <span id="href"></span><br>
+            pathname: <span id="pathname"></span><br>
+            search: <span id="search"></span><br>
+            port: <span id="port"></span><br>
+            protocol: <span id="protocol"></span><br>
+        </div>
+        <br>
+
+        <div>
+            <button onclick="google()">href</button>
+            <button onclick="naver()">assign</button>
+            <button onclick="daum()">Replace</button>
+            <button onclick="location.reload()">Reload</button>
+            <button onclick="location.search='name=Nolbu&age=20'">search</button>
+            <br>
+
+            <button onclick="goBack()">back</button>
+            <button onclick="goForward()">forward</button>
+            <button onclick="backTwo()">go(-2)</button>
+            <button onclick="forwardTwo()">go(2)</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var hash = window.location.hash;
+        var host = location.host;
+        var hostname = location.hostname;
+        var href = location.href;
+        var pathname = location.pathname;
+        var search = location.search;
+        var port = location.port;
+        var protocol = location.protocol;
+        
+        let x = document.getElementById('hash')
+        x.innerHTML = hash
+        document.getElementById('host').innerHTML = host;
+        document.getElementById('hostname').innerHTML = hostname;
+        document.getElementById('href').innerHTML = href;
+        document.getElementById('pathname').innerHTML = pathname;
+        document.getElementById('search').innerHTML = search;
+        document.getElementById('port').innerHTML = port;
+        document.getElementById('protocol').innerHTML = protocol;
+
+        // http -> Hyper Text Transform Protocal
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            history.forward();
+        }
+        function backTwo() {
+            history.go(-2);
+        }
+
+        function forwardTwo() {
+            history.go(2);
+        }
+
+        // location 객체에는 주소줄을 제어하는 명령
+        function google() {
+            // <a href="http://www.google.com">Google</a>
+            window.location.href = 'http://www.google.com'
+        }
+
+        function naver() {
+            location.assign('http://www.naver.com')
+        }
+
+        function daum() {
+            location.replace('http://www.daum.net')
+        }
+
+    </script>
+</body>
+</html>

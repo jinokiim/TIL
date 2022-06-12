@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A01 Start</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="./jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        // jQuery 라이브러리 밑에 이용할 명령을 기술
+        // window.addEventListener('load', function(){ });
+
+        console.log($);
+        console.log(jQuery);
+
+        // window.load 이벤트를 구현한 명령
+        $(document).ready(function(){
+            console.log(('One'));
+        });
+
+        jQuery(document).ready(function(){
+            console.log(('Two'));
+        });
+
+
+        $(function(){
+            console.log(('Three'));
+        });
+
+        jQuery(function(){
+            console.log(('Four'));
+        });
+
+        
+
+
+    </script>
+</head>
+<body>
+    <div class="card-body">
+        <h3>Currency</h3>
+
+        Qty: <input type="text" class="form-control" id="qty"><br>
+        Cost: <input type="text" class="form-control" id="cost"><br>
+        <br>
+        <div>
+            Total: <span></span>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-outline-primary" id="clickBtn">Click</button>
+            <button class="btn btn-outline-primary" id="totalBtn">Total</button>
+        </div>
+    </div>
+</body>
+</html>
