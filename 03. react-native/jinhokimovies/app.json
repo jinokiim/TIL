@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "jinhokimovies",
+    "slug": "jinhokimovies",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "jinhokimovies"
+}
