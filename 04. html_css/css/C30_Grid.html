@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Box</title>
+  <style type="text/css">
+
+    .box { border: 1px solid orange; padding: 10px; }
+
+    #one { border: 1px solid gray; width: 100%; 
+      display: grid;
+      /* grid-template-columns: 200px 200px 200px; */
+      
+      /* grid-template-columns: 100px 1fr 1fr; */
+      grid-template-columns: minmax(100px, auto) minmax(100px, auto) minmax(100px, auto);
+    }
+    #two { border: 1px solid gray; width: 100%; 
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+    }
+    #three { border: 1px solid gray; width: 100%; 
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, auto));   
+    }
+
+    /* auto-fill -> 공간이 남으면 안채움
+    auto-fit -> 공간이 남으면 늘려 채움
+     */
+    #four { border: 1px solid gray; width: 100%; 
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, auto));  
+    }
+    #five { border: 1px solid gray; width: 100%; 
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* 줄어들면 내려감 */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="one">
+    <div class="box">A1</div>
+    <div class="box">A2</div>
+    <div class="box">A3</div>
+  </div>
+  <br>
+
+  <div id="two">
+    <div class="box">B1</div>
+    <div class="box">B2</div>
+    <div class="box">B3</div>
+  </div>
+
+  <div id="three">
+    <div class="box">C1</div>
+    <div class="box">C2</div>
+    <div class="box">C3</div>
+  </div>
+
+  <div id="four">
+    <div class="box">D1</div>
+    <div class="box">D2</div>
+    <div class="box">D3</div>
+  </div>
+
+  <div id="five">
+    <div class="box">E1</div>
+    <div class="box">E2</div>
+    <div class="box">E3</div>
+
+    <div class="box">E4</div>
+    <div class="box">E5</div>
+    <div class="box">E6</div>
+  </div>
+
+</body>
+</html>

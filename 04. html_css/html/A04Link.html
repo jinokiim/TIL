@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A04Link</title>
+</head>
+<body>
+    <h1>A04 Link</h1>
+
+    <h3>인터넷 상의 다른 웹 사이트와 연결 [절대패스]</h3>
+    <p>
+        <a href="https://www.spacex.com/">스페이스X</a>는 NASA 유인 우주비행 프로그램의 주요 파트너사로, 
+        현재 크루 드래곤 우주선으로 NASA 우주비행사와 화물을 국제우주정거장으로 운송하는 일을 담당하고 있으며
+        유인 달 탐사 프로그램인 아르테미스를 위해 스타십 로켓 시스템을 개발하고 있다.
+        
+        대한민국의 대표 포털로는 
+        <a href="http://www.daum.net">다음</a>과
+        <a href="http://www.naver.com">네이버</a>가 있다.<br>
+        파라메터가 있는 상세페이지는 파라메터까지 걸어야 한다
+        <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=105&oid=023&aid=0003669348">스페이스X로켓, 3월 달 뒷면과 충돌한다.</a>
+    </p>
+
+    <h3>절대 패스</h3>
+    <p>
+        어떤 페이지에서 링크를 설정해도 변경되지 않는 고정값<br>
+        <a href="http://127.0.0.1:5500/A01HTML.html">A01 HTML</a>페이지는 단락에 대한 설명.<br>
+        <a href="http://127.0.0.1:5500/company/Way.html">오시는 길</a>도 참조할 수 있습니다.
+    </p>
+
+    <ul>
+        <li><a href="http://127.0.0.1:5500/A01HTML.html">A01 HTML</a></li>
+        <li><a href="http://127.0.0.1:5500/company/way.html">Way</a></li>
+        <li><a href="http://127.0.0.1:5500/product/phone/iphone.html">iPhone</a></li>
+        <li><a href="http://127.0.0.1:5500/product/phone/samsung.html">Samsung</a></li>
+        <li><a href="http://127.0.0.1:5500/product/tv/lg.html">lg</a></li>
+    </ul>
+
+    <h3>상대 패스</h3>
+    <p>현재 페이지를 기준으로 이동할 페이지의 패스를 설정한다. <br>
+        현재 페이지는 ./파일명 <br>
+        한폴더 상위 페이지는 ../파일명 <br>
+        하위 페이지는 폴더명/파일명
+    </p>
+    <ul>
+        <li><a href="A01HTML.html">A01 HTML</a></li>
+        <li><a href="./company/way.html">Way</a></li>
+        <li><a href="./product/phone/iphone.html">iPhone</a></li>
+        <li><a href="./product/phone/samsung.html">Samsung</a></li>
+        <li><a href="./product/tv/lg.html">lg</a></li>
+    </ul>
+
+    <h3>새창 열기</h3>
+    <div>
+        새 창을 띄어 새로운 페이지로 이동하게 한다<br>
+        <a href="http://www.daum.net" target="_blank">다음</a>
+    </div>
+    
+
+</body>
+</html>

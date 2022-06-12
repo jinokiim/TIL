@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table</title>
+  <style type="text/css">
+		body { font-size: 12pt; line-height: 1.5em; color: gray; }
+		/* border-collapse: collapse -> 1줄, separate -> 2줄 */
+    .table-one { 
+      width: 750px; 
+      border: 1px solid; 
+      color: gray; 
+      caption-side: bottom;
+      border-collapse: separate;
+      border-spacing: 10px;
+    }
+    .table-one th, .table-one td {border: 1px solid gray;}
+    
+    /* 구조 가상 클래스를 이용 */
+    .table-two { 
+      width: 750px; 
+      border: 1px solid; 
+      color: gray; 
+      caption-side: bottom;
+      border-collapse: collapse;
+      border-spacing: 10px;
+    }
+    .table-two th, .table-two td {border: 1px solid gray;}
+    .table-two td:first-child { background-color: lightgray; color: white;}
+    
+    .table-three { 
+      width: 750px; 
+      border: 1px solid; 
+      color: green; 
+      caption-side: bottom;
+      border-collapse: collapse;
+      border-spacing: 10px;
+    }
+    /* 첫번째 줄 */
+    .table-three thead { background-color: black;}
+    .table-three th, .table-three td {border: 1px solid blue;}
+    /* nth-child(num) -> num은 1부터 시작. 연산자 % -> 나머지 값이 1이면 2n + 1
+      1번째 칸 1 % 2 == 1??
+      2번째 칸 2 % 2 == 1??
+    */
+    .table-three td:nth-child(2n) { background-color: lightgray; color: white;}
+	</style>
+</head>
+<body>
+  <h1>필요한 코드와 <em>CSS 스타일</em>에 손쉽게 액세스 작업 시간 단축</h1>
+	<p>관련 파일 막대에 있는 파일을 클릭하면 코드 뷰에서 소스를 확인하면서 동시에 디자인 뷰에서 상위 페이지를 볼 수 있습니다. 코드 탐색기를 사용하여 현재 선택 영역에 영향을 미치는 모든 CSS 소스 코드에 신속하게 액세스할 수도 있습니다.</p>
+
+	<h2>향상된 코드 힌트 기능으로 신속하게 스트립트 작성 작업 시간 단축</h2>
+	<p>JavaScript의 주요 객체와 기본 데이터 유형에 대한 지원이 더욱 강화되어 JavaScript를 보다 효과적으로 작성할 수 있습니다. jQuery, Prototype, Spry 등 일반적으로 널리 사용되는 JavaScript 프레임워크를 통합하여 더욱 확장된 Dreamweaver CS4의 코딩 기능을 활용할 수 있습니다.</p>
+
+  <table class="table-one">
+    <caption>학생 점수</caption>
+    <thead>
+      <tr>
+        <th>이름</th><th>국어</th><th>영어</th><th>총점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>홍길동</td><td>100</td><td>90</td><td>190</td>
+      </tr>
+      <tr>
+        <td>놀부</td><td>90</td><td>90</td><td>180</td>
+      </tr>
+      <tr>
+        <td>흥부</td><td>80</td><td>90</td><td>170</td>
+      </tr>
+    </tbody>
+  </table>
+	
+  <table class="table-two">
+    <caption>학생 점수</caption>
+    <thead>
+      <tr>
+        <th>이름</th><th>국어</th><th>영어</th><th>총점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>홍길동</td><td>100</td><td>90</td><td>190</td>
+      </tr>
+      <tr>
+        <td>놀부</td><td>90</td><td>90</td><td>180</td>
+      </tr>
+      <tr>
+        <td>흥부</td><td>80</td><td>90</td><td>170</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table-three">
+    <caption>학생 점수</caption>
+    <thead>
+      <tr>
+        <th>이름</th><th>국어</th><th>영어</th><th>총점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>홍길동</td><td>100</td><td>90</td><td>190</td>
+      </tr>
+      <tr>
+        <td>놀부</td><td>90</td><td>90</td><td>180</td>
+      </tr>
+      <tr>
+        <td>흥부</td><td>80</td><td>90</td><td>170</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td>합계</td><td></td><td></td><td></td>
+    </tfoot>
+  </table>
+
+	<h5>손쉽게 CSS 모범 사례 적용 작업 시간 단축</h5>
+	<p>코드를 작성하지 않고 CSS 모범 사례를 구현할 수 있습니다. 속성 패널에서 새로운 CSS 규칙을 만들 수 있고 CSS의 각 속성이 어디에 적용되는지 간단하고 명확하게 파악할 수 있습니다.</p>
+
+</body>
+</html>

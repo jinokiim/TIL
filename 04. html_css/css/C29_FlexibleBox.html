@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Box</title>
+  <style type="text/css">
+    .box    { border: 1px solid orange; width: 100px; height: 100px;}
+
+    /* display: flex -> 바깥 #one을 위에서 아래 형태로 배치 */
+    /* display: inline-flex -> 바깥 #one 을 좌, 우 형태로 배치 */
+    /* flex-direction: row, column, row-reverse, column-reverse -> 내부 요소를 어떻게 배치 할 것인가를 결정 */
+    /* flex-wrap: nowrap(내부요소를 줄어서 차게만듬) or wrap -> 넓이 값에 내부 요소 배치 크기에 따른 개행 여부 */
+    #one    { border: 1px solid gray; width: 500px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    /* flex-flow: row nowrap -> flex-direction 과 flex-wrap 합친것 */
+    /* justify-content: -> 아이템의 정렬 / flex-start, flex-end, center, space-around, space-between; */
+    #two    { border: 1px solid gray; width: 500px; 
+      display: inline-flex;
+      flex-flow: row-reverse;
+      justify-content:space-evenly;
+    }
+
+    /* align-content: -> 교차축에 대한 정렬 /
+     center(가운데), flex-start(맨위), flex-end(맨아래), space-evenly(내부균일), stretch(높이가 없으면 꽉차게); */
+    #three  { border: 1px solid gray; width: 500px; height: 300px; 
+      display: inline-flex;
+      flex-flow:row wrap;
+      justify-content:space-evenly;
+      align-content: stretch;
+    }
+
+    #four   { border: 1px solid gray; width: 500px; height: 300px; 
+      display: inline-flex;
+      flex-flow:row wrap;
+      justify-content:space-evenly;
+      align-content: stretch;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="one">
+    <div class="box">A</div>
+    <div class="box">A</div>
+    <div class="box">A</div>
+    <div class="box">A</div>
+    <div class="box">A</div>
+  </div>
+
+  <div id="two">
+    <div class="box">B1</div>
+    <div class="box">B2</div>
+    <div class="box">B3</div>
+  </div>
+
+  <div id="three">
+    <div class="box">C1</div>
+    <div class="box">C2</div>
+    <div class="box">C3</div>
+    <div class="box">C4</div>
+
+    <div class="box">C5</div>
+    <div class="box">C6</div>
+    <div class="box">C7</div>
+    <div class="box">C8</div>
+  </div>
+
+  <div id="four">
+    <div class="box">D1</div>
+    <div class="box" style="height: 50px;">D2</div>
+    <div class="box">D3</div>
+    <div class="box" style="height: 70px;">D4</div>
+
+    <div class="box" style="height: 30px;">D5</div>
+    <div class="box">D6</div>
+    <div class="box" style="height: 50px;">D7</div>
+    <div class="box">D8</div>
+  </div>
+
+</body>
+</html>

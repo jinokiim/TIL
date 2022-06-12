@@ -1,0 +1,40 @@
+
+
+.container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-content {
+    width: 80%;
+    height: 200px;
+    background-color: gray;
+    float: left;
+}
+
+.blog-content h4{
+    clear: both;
+}
+
+.blog-image {
+    width: 20%;
+    height: 200px;
+    background-color: yellow;
+    float: left;
+}
+
+.blog-profile{
+    width: 50px;
+    display: block;
+    float: left;
+}
+
+.blog-name {
+    float: left;
+}
+
+.blog-name h4, p {
+    margin: 2px;
+}
+

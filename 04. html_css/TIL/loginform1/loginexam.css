@@ -1,0 +1,42 @@
+
+fieldset {
+    width: 300px;
+}
+
+#inputid, #inputpw {
+    width: 210px;
+    height: 25px;
+    border-radius: 0;
+    border: 1px solid gray;
+    padding-left: 10px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#inputid{
+    border-bottom: 0.5px;
+}
+
+.idbox {
+    padding: none;
+    margin: none;
+    float: left;
+}
+
+.pwbox {
+    margin: 0;
+    clear: both;
+}
+
+#loginbtn {
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid gray;
+    border-left: 0;
+}
+
+.options {
+    padding-top: 10px;
+}
