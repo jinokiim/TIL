@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <title>A04 Component Props</title>
+</head>
+<body>
+
+    <div class="card-body" id="app">
+        <h3>A04 Component Props</h3>
+        <!-- html 속성 형태로 전달한 값은 문자열로 전달된다. 카멜표기법이면 - 표기법으로 변경한다.-->
+                            <!-- v-bind 생략가능 -->
+        <comp-one name="NolBu" v-bind:age="30" :add="address" :user="user" :arr="ary" :on-plus="onPlus" is-checked></comp-one>
+    </div>
+
+    <template id="tempOne">
+        <div>
+            Name: {{name}}<br>
+            Age: {{age + 100}}<br>
+            Address: {{add}}<br>
+            User: {{user.name}} / {{user.age}} / {{user.address}}<br>
+            Array: {{arr[0]}} / {{arr[1]}} / {{arr[2]}} <br>
+            onPlus: {{onPlus(20, 30)}}<br>
+            isChecked: {{isChecked ? '동의' : '동의안함'}}<br>
+        </div>
+    </template>
+    <script>
+        Vue.component('compOne', {
+            template: '#tempOne',
+            // 넘어오는 값들은 문자열이다.
+            props: ['name', 'age', 'add', 'user', 'arr', 'on-plus', 'is-checked'],
+            data:  function(){
+                return{}
+            },
+
+            methods: {}
+        });
+    </script>
+
+    
+    <script type="text/javascript">
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                address: 'Seoul',
+                user: {name: 'Hong', age: 20},
+                ary: [10, 20, 30],
+            },
+            methods: {
+                onPlus: function(x, y) {
+                    return `${x} + ${y} = ${x + y}`
+                }
+            }
+        });
+    </script>
+</body>
+</html>

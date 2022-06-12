@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <style type="text/css">
+        .one { color: orange; }
+        .two { font-size: 24pt; }
+        .three { font-weight: bold; }
+        .warning {background-color: orange; color: gray; }
+
+        [v-cloak] { display: none; }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="card-body">
+        <h3>A09 Style Binding</h3>
+
+        <div style="color: orange; font-size: 24pt;">{{hello}}</div>
+        <div :style="{color: 'orange', fontSize: '30pt'}">{{hello}}</div>
+        <div :style="styleOne" @mouseenter="changeEnter" @mouseleave="changeLeave">{{hello}}</div>      <!-- 좋은 방식이 아니다. computed로 빼서 사용하는것이 좋음 -->
+        <div :style="styleTwo" >{{hello}}</div>  
+        <br>
+
+        <h3>Class Binding</h3>
+
+        <div class="one" :class="['two', 'three']">{{hello}}</div>
+        <div class="one" :class="clzTwo">{{hello}}</div>
+        <div class="one" :class="clzTwo">{{hello}}</div>
+        <br>
+
+        <!-- 문자 참조 방식만 가능 -->
+        <div class="one" :class="{'two': true, 'three': true}">{{hello}}</div>
+        <div class="one" :class="{'two': true, 'three': isChecked}">{{hello}}</div>
+        <input type="checkbox" v-model="isChecked"> Check<br />
+        <br>
+
+        <input type="text" class="form-control" />
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                hello: 'Hello World!!',
+                styleOne: {color: 'green', fontSize: '30pt'},
+                clzTwo: 'two',
+                isChecked: false
+            },
+            computed: {
+                styleTwo: function() {   // 매개변수가 없음. setter
+                    return {color: 'lightblue', fontSize: '30pt'}
+                }
+            },
+            methods: {
+                changeEnter: function() {
+                    this.styleOne.color = 'red';
+                    this.styleOne.background = 'lightgray';
+                },
+                changeLeave: function() {
+                    this.styleOne.color = 'lightblue'
+                    this.styleOne.background = 'black';
+                }
+            }
+        })
+    </script>
+</body>
+</html>
