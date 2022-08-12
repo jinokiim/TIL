@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import SignIn from "../views/SignIn.vue";
+import SignIn from "../views/auth/SignIn.vue";
+import SignUp from "../views/auth/SignUp.vue";
 import HomePage from "../views/HomePage.vue";
 
 Vue.use(VueRouter);
@@ -8,6 +9,7 @@ Vue.use(VueRouter);
 const routes = [
   { path: "/", name: "Home", component: HomePage },
   { path: "/signin", name: "SignIn", component: SignIn },
+  { path: "/signup", name: "SignUp", component: SignUp },
 ];
 
 // Vue 라우터 인스턴스 생성
