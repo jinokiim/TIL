@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+
   env: {
     node: true,
   },
@@ -10,6 +11,7 @@ module.exports = {
   ],
   parserOptions: {
     parser: "@babel/eslint-parser",
+    parserOptions: { requireConfigFile: "false" },
   },
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
