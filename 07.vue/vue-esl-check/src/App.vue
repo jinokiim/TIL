@@ -12,7 +12,7 @@
     <v-main>
       <router-view />
     </v-main>
-    <v-bottom-navigation :value="value" color="teal" grow>
+    <v-bottom-navigation :value="value" color="teal" grow fixed>
       <v-btn>
         <span>Recents</span>
         <v-icon>mdi-history</v-icon>
