@@ -3,6 +3,7 @@
     <v-main class="sign-in">
       <v-container>
         <h1>This is an SignIn page</h1>
+        <div>{{ this.$store.state.Users }}</div>
       </v-container>
       <v-container>
         <form class="mr-4 ml-4">
@@ -49,6 +50,7 @@
             @blur="$v.checkbox.$touch()"
           ></v-checkbox>
           <v-btn class="mr-4" @click="submit"> submit </v-btn>
+          <v-btn class="mr-4" @click="create"> store </v-btn>
           <v-btn @click="clear"> clear </v-btn>
         </form>
       </v-container>
@@ -75,6 +77,9 @@ export default {
       console.log(this.password);
       console.log(this.passwordCheck);
       console.log(this.checkbox);
+    },
+    create() {
+      console.log("유저 목록 : ", this.$store.state.Users);
     },
   },
 };
